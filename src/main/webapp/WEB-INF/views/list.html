@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Tứ Đại Đỉnh Đèo</h1>
+<table>
+    <tr>
+        <th>name</th>
+        <th>address</th>
+        <th>image</th>
+        <th>Edit</th>
+    </tr>
+    <th:block th:each="land: ${list}">
+        <tr>
+            <td th:text="${land.getName()}"></td>
+            <td th:text="${land.getCountry()}"></td>
+            <td><img th:src="@{'/i/'+ ${land.getImage()}}" width="100"/></td>
+            <td><a th:href="@{'/students/edit/'+${land.getId()}}">Edit</a></td>
+        </tr>
+
+    </th:block>
+</table>
+
+</body>
+</html>
